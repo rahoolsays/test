@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank" pageWidth="800" pageHeight="842" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9851b718-6eba-4571-94f3-9f35771b5bf4">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <style name="openingbalanceFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{openingbalance} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{openingbalance}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="fundsFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{funds} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{funds}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="balanceavailableFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{balanceavailable} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{balanceavailable}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="tdiFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{tdi} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{tdi}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="tsdiFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{tsdi} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{tsdi}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="tdiiFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{tdii} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{tdii}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="tsdiiFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{tsdii} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{tsdii}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="tsfaFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[($P{mercSum}+$P{custSum}) < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[($P{mercSum}+$P{custSum})>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="gdFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{gd} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{gd}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="ricFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{ric} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{ric}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="riFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{ri} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{ri}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="rfaFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{rfa} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{rfa}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="drFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[($P{ri}+$P{rfa}) < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[($P{ri}+$P{rfa})>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="ndFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[($P{gd}-($P{ri}+$P{rfa})) < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[($P{gd}-($P{ri}+$P{rfa}))>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="nbaFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[($P{balanceavailable}-($P{gd}-($P{ri}+$P{rfa}))) < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[($P{balanceavailable}-($P{gd}-($P{ri}+$P{rfa})))>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="custSumFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{custSum} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{custSum}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <style name="mercSumFieldStyle">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{mercSum} < 0]]></conditionExpression>
+            <style forecolor="#FF0000"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$P{mercSum}>0]]></conditionExpression>
+            <style forecolor="#000000"/>
+        </conditionalStyle>
+    </style>
+    <parameter name="merchantid" class="java.lang.String"/>
+    <parameter name="merchantname" class="java.lang.String"/>
+    <parameter name="website" class="java.lang.String"/>
+    <parameter name="date" class="java.lang.String"/>
+    <parameter name="time" class="java.lang.String"/>
+    <parameter name="openingbalance" class="java.lang.Double"/>
+    <parameter name="funds" class="java.lang.Double"/>
+    <parameter name="balanceavailable" class="java.lang.Double"/>
+    <parameter name="tdi" class="java.lang.Float"/>
+    <parameter name="tsdi" class="java.lang.Float"/>
+    <parameter name="tdii" class="java.lang.Double"/>
+    <parameter name="tsdii" class="java.lang.Double"/>
+    <parameter name="tsfa" class="java.lang.Double"/>
+    <parameter name="gd" class="java.lang.Double"/>
+    <parameter name="ric" class="java.lang.Double"/>
+    <parameter name="ri" class="java.lang.Double"/>
+    <parameter name="rfa" class="java.lang.Double"/>
+    <parameter name="dr" class="java.lang.Double"/>
+    <parameter name="nd" class="java.lang.Double"/>
+    <parameter name="nba" class="java.lang.Double"/>
+    <parameter name="logo" class="java.lang.String"/>
+    <parameter name="custSum" class="java.lang.Double"/>
+    <parameter name="mercSum" class="java.lang.Double"/>
+    <parameter name="from" class="java.lang.String"/>
+    <parameter name="to" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <field name="merctext" class="java.lang.String">
+        <fieldDescription><![CDATA[merctext]]></fieldDescription>
+    </field>
+    <field name="mercamount" class="java.lang.Double">
+        <fieldDescription><![CDATA[mercamount]]></fieldDescription>
+    </field>
+    <field name="custtext" class="java.lang.String">
+        <fieldDescription><![CDATA[custtext]]></fieldDescription>
+    </field>
+    <field name="custamount" class="java.lang.Double">
+        <fieldDescription><![CDATA[custamount]]></fieldDescription>
+    </field>
+    <variable name="total" class="java.lang.Double" calculation="Sum">
+        <variableExpression><![CDATA[$F{mercamount}]]></variableExpression>
+    </variable>
+    <variable name="custTotal" class="java.lang.Double" calculation="Sum">
+        <variableExpression><![CDATA[$F{custamount}]]></variableExpression>
+    </variable>
+    <variable name="final" class="java.lang.Double"/>
+    <variable name="Variable_1" class="java.lang.Double"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="641" splitType="Stretch">
+            <rectangle>
+                <reportElement x="-10" y="0" width="760" height="90" uuid="555c716a-ce5f-4562-b187-7d17bec319da"/>
+            </rectangle>
+            <textField>
+                <reportElement x="241" y="9" width="159" height="30" uuid="408374df-f1e0-41da-9e13-970564b3985b"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{merchantid}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="261" y="29" width="139" height="30" uuid="e50101f9-c4ba-4707-adb9-44b5cd72244d"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{merchantname}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="211" y="49" width="189" height="30" uuid="69b75863-c4ce-4028-b452-4bfef965ad74"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{website}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="620" y="29" width="122" height="30" uuid="2665594d-2b86-450f-af8e-57cd5c849f1e"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="620" y="49" width="122" height="30" uuid="d35b0f2f-b071-4735-8591-3b5549a643b4"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{time}]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="openingbalanceFieldStyle" x="600" y="100" width="149" height="30" uuid="ae4b5faa-dab7-4656-8599-e5328945669f"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{openingbalance}==0?"-": $P{openingbalance})]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="fundsFieldStyle" x="599" y="120" width="150" height="30" uuid="8ff06b62-248a-4b1c-be36-1d9d82d3a986"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[( $P{funds}== 0?"-": $P{funds})]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="balanceavailableFieldStyle" x="599" y="140" width="150" height="30" uuid="1ab97574-9ba5-4822-bd8e-0291b5df3c12"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{balanceavailable}==0?"-": $P{balanceavailable})]]></textFieldExpression>
+            </textField>
+            <line direction="BottomUp">
+                <reportElement x="77" y="170" width="599" height="1" uuid="03c58230-0b36-4551-af38-9522829d9c36"/>
+                <graphicElement>
+                    <pen lineStyle="Solid"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="141" y="9" width="149" height="30" uuid="849f8f52-2163-4eb3-ab33-279d5602695c"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Merchant ID : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="141" y="29" width="140" height="30" uuid="54c74be8-11d4-4b1b-87ca-85e1a7c1d6e8"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Merchant Name : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="141" y="49" width="110" height="30" uuid="499fbf78-4497-456e-b1b1-0a67e2e970ad"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Website : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="570" y="9" width="82" height="30" uuid="683d3d57-6eca-4c5f-9035-5cd9c3b2bf39"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" isUnderline="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Summary]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="570" y="29" width="60" height="30" uuid="d75fafad-5b00-4def-86d4-520aed2b9759"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Date : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="570" y="49" width="60" height="30" uuid="48c5426e-f60a-4dbd-b03f-9d14407ef4a4"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Time : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="100" width="231" height="30" uuid="754e58ed-08fb-4151-a99a-1560d769f6f8"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Opening Balance]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="30" y="120" width="321" height="30" uuid="76a6dd1d-5aad-4352-9966-4ee4f7f2139a"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Funds Recieved (if any)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="140" width="170" height="30" uuid="2c4fa2d2-9dd6-496b-a220-352a9ace7c6f"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Balance Available]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="189" width="251" height="30" uuid="06f5c0bb-6c95-48f0-980d-507b46365a71"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Total Disb. Instructions]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="210" width="290" height="30" uuid="abb1223b-2996-461a-8d01-e7a8a8ecc224"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Total Successful Disb. Instructions]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="281" y="170" width="59" height="30" uuid="6324b270-815d-408e-a233-d83228761100"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" isUnderline="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[count]]></text>
+            </staticText>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="tdiFieldStyle" x="251" y="189" width="100" height="30" uuid="dd17de02-16fd-4ae7-a02f-2d9b2025a523"/>
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{tdi}==0?"-":$P{tdi})]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="tsdiFieldStyle" x="251" y="210" width="100" height="30" uuid="f7d256df-4ca4-4bef-8cf3-8f7825c976a1"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{tsdi}==0?"-":$P{tsdi})]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="tdiiFieldStyle" x="485" y="189" width="130" height="30" uuid="9069546d-965a-41af-8044-38ef330b6e24"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{tdii}==0?"-":$P{tdii})]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="tsdiiFieldStyle" x="500" y="210" width="115" height="30" uuid="3f4e5082-e5c1-4d90-9d74-add5fcbb7d2a"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{tsdii}==0?"-":$P{tsdii})]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement style="tsfaFieldStyle" x="10" y="250" width="300" height="30" uuid="b0ab6169-9f13-4263-89c5-4847f968e1cc"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Service Fee applied on Merchant]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="290" width="311" height="30" uuid="88b5d984-9a31-4d0f-a4ac-33943ba9af7e"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Service Fee applied on Customer]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="15" y="325" width="275" height="30" uuid="9a703d68-a5c7-4645-9b5f-8fbd0787160a"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Total Service/ Fee Applied]]></text>
+            </staticText>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="tsfaFieldStyle" x="505" y="325" width="100" height="30" uuid="30171e40-5d4a-4223-98e5-08ca5e0c4ec8"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[(($P{mercSum}+$P{custSum})==0?"-":($P{mercSum}+$P{custSum}))]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="609" y="355" width="140" height="1" uuid="1b0331ca-a6ed-4c54-9cee-ace1a4c72c64"/>
+            </line>
+            <staticText>
+                <reportElement x="15" y="359" width="180" height="30" uuid="75025718-3287-416a-a1fb-4fb98686ea10"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Gross Deduction]]></text>
+            </staticText>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="gdFieldStyle" x="609" y="359" width="131" height="30" uuid="47ffeb93-8d3e-4f96-bf78-0a1eb52ecc78"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[(($P{gd})==0?"-":($P{gd}))]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="15" y="390" width="275" height="30" uuid="85318e91-10ee-4651-a58a-513e59d50f9a"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Total Reversal Instructions]]></text>
+            </staticText>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="ricFieldStyle" x="251" y="390" width="100" height="30" uuid="e54480be-c4b3-4d24-8f58-70c99c3e07ae"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{ric}==0?"-":$P{ric})]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="riFieldStyle" x="368" y="388" width="100" height="30" uuid="bbd7c040-0a28-487f-84bf-960798139bf4"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{ri}==0?"-":$P{ri})]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="15" y="421" width="255" height="30" uuid="bd3c621c-3c38-44ac-a992-d421d83d2234"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Reversal Fee Applied @ 0.5%]]></text>
+            </staticText>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="rfaFieldStyle" x="371" y="421" width="100" height="30" uuid="a8042270-85d1-41d2-ae55-6efe053d5c67"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{rfa}==0?"-":$P{rfa})]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="15" y="451" width="246" height="30" uuid="c3d52519-7f13-441f-a361-1aa77427a176"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Deduction Reversed]]></text>
+            </staticText>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="drFieldStyle" x="500" y="451" width="100" height="30" uuid="e56023ca-01d9-430a-af7d-6890d5125a03"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[(($P{ri}+$P{rfa})==0?"-":($P{ri}+$P{rfa}))]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="610" y="480" width="140" height="1" uuid="edd34af4-952a-45e0-bf38-e59e3088aa12"/>
+            </line>
+            <staticText>
+                <reportElement x="15" y="484" width="246" height="30" uuid="b7ffdac7-e302-4941-be50-e36e21d3b6e5"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Net Deduction]]></text>
+            </staticText>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="ndFieldStyle" x="609" y="498" width="131" height="30" uuid="a0848a5f-2a7b-40a5-bb14-8becac54391d"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[(($P{gd}-($P{ri}+$P{rfa}))==0?"-":($P{gd}-($P{ri}+$P{rfa})))]]></textFieldExpression>
+            </textField>
+            <line direction="BottomUp">
+                <reportElement x="71" y="538" width="599" height="1" uuid="0504934f-b283-4ff3-ad1d-2782fa0bb79d"/>
+                <graphicElement>
+                    <pen lineStyle="Solid"/>
+                </graphicElement>
+            </line>
+            <line direction="BottomUp">
+                <reportElement x="71" y="580" width="599" height="1" uuid="baa52224-c67f-4ede-aa5e-f4eef972664f"/>
+                <graphicElement>
+                    <pen lineStyle="Solid"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="18" y="552" width="272" height="30" uuid="7cc3d443-7f9a-4d20-8fc0-e0db954182e7"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Net Balance Available]]></text>
+            </staticText>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="nbaFieldStyle" x="600" y="552" width="161" height="30" uuid="c9a15b9a-f7b7-447d-865c-386ad64e3478"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[(($P{balanceavailable}-($P{gd}-($P{ri}+$P{rfa})))==0?"-":($P{balanceavailable}-($P{gd}-($P{ri}+$P{rfa}))))]]></textFieldExpression>
+            </textField>
+            <image hAlign="Center">
+                <reportElement x="-3" y="10" width="140" height="70" uuid="5e65aa25-3fe6-4eea-ae22-24d1ce3aea3f"/>
+                <imageExpression><![CDATA[$P{logo}]]></imageExpression>
+            </image>
+            <textField evaluationTime="Column" pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="mercSumFieldStyle" x="371" y="250" width="100" height="30" uuid="d9c8ee8d-b220-45c3-a911-d8277c10ae83"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{mercSum}==0?"-":$P{mercSum})]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.###;(#,##0.###)">
+                <reportElement style="custSumFieldStyle" x="371" y="290" width="100" height="30" uuid="c7c9a712-dea4-44b2-80fb-9f86b2aed459"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($P{custSum}==0?"-":$P{custSum})]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="10" y="611" width="320" height="30" forecolor="#FF1612" uuid="7c5772f6-a1a8-4628-a129-5879cf913244"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Service / Fee Applied on Merchant]]></text>
+            </staticText>
+            <line>
+                <reportElement x="10" y="630" width="231" height="2" forecolor="#FC0E0A" uuid="c611567d-508a-4df6-8222-48648a8fed71"/>
+            </line>
+            <staticText>
+                <reportElement x="400" y="9" width="82" height="30" uuid="12accb1b-aed7-4140-abdc-f67ee86beb41"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" isUnderline="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Range]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="400" y="29" width="71" height="30" uuid="e6d7fcaf-3e7d-43d9-b51f-21ab2c6d417c"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[From : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="400" y="49" width="82" height="30" uuid="e59dca13-9e6d-4738-b6ac-389c1b84e676"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[To : ]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="450" y="29" width="100" height="30" uuid="40f49482-8ff9-45d2-bbb3-7108986e6957"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{from}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="450" y="49" width="100" height="30" uuid="aa0947f8-698f-49ad-b8b8-bb4ddc99aa49"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{to}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="413" y="630" width="231" height="2" forecolor="#FC0E0A" uuid="a622246e-4e41-4518-9204-f01647200d41"/>
+            </line>
+            <staticText>
+                <reportElement x="413" y="611" width="317" height="30" forecolor="#FF1612" uuid="8c8b8151-3044-4f02-ab5b-04f082f2646d"/>
+                <textElement>
+                    <font fontName="SansSerif" size="14" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Service / Fee Applied on Customer]]></text>
+            </staticText>
+        </band>
+    </title>
+    <detail>
+        <band height="23">
+            <textField isBlankWhenNull="true">
+                <reportElement isPrintRepeatedValues="false" x="10" y="2" width="271" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#FC130F" uuid="88b7f348-76d7-4552-b9da-3ebd51b775db">
+                    <printWhenExpression><![CDATA[$F{merctext}!=null]]></printWhenExpression>
+                </reportElement>
+                <box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+                <textElement textAlignment="Left" verticalAlignment="Top">
+                    <font size="14"/>
+                    <paragraph lineSpacing="Single" lineSpacingSize="0.0"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{merctext})]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.###;(#,##0.###)" isBlankWhenNull="true">
+                <reportElement x="300" y="1" width="100" height="21" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#FF1612" uuid="817d2570-dd31-4dd7-b9ba-348a0db2098d">
+                    <printWhenExpression><![CDATA[$F{mercamount}!=null]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Top">
+                    <font size="14"/>
+                    <paragraph lineSpacingSize="0.0"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{mercamount})]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement style="tdiFieldStyle" x="410" y="0" width="271" height="22" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#FF130F" uuid="439b6aa1-298b-4f6f-956a-912f547855d2">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <printWhenExpression><![CDATA[$F{custtext}!=null]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" markup="html">
+                    <font size="14"/>
+                    <paragraph lineSpacingSize="0.0"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{custtext})]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.###;(#,##0.###)" isBlankWhenNull="true">
+                <reportElement x="674" y="0" width="100" height="23" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#FF1612" uuid="bea01961-883f-4ce2-93d1-16e283d16d5e">
+                    <printWhenExpression><![CDATA[$F{custamount}!=null]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                    <paragraph lineSpacingSize="0.0"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{custamount})]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>

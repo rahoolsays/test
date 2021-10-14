@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0118f3e4-3277-4461-9e19-47e46a0d70de">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <field name="merctext" class="java.lang.String">
+        <fieldDescription><![CDATA[merctext]]></fieldDescription>
+    </field>
+    <field name="mercamount" class="java.lang.Double">
+        <fieldDescription><![CDATA[mercamount]]></fieldDescription>
+    </field>
+    <field name="custtext" class="java.lang.String">
+        <fieldDescription><![CDATA[custtext]]></fieldDescription>
+    </field>
+    <field name="custamount" class="java.lang.Double">
+        <fieldDescription><![CDATA[custamount]]></fieldDescription>
+    </field>
+    <variable name="total" class="java.lang.Double" calculation="Sum">
+        <variableExpression><![CDATA[$F{mercamount}]]></variableExpression>
+    </variable>
+    <variable name="custTotal" class="java.lang.Double" calculation="Sum">
+        <variableExpression><![CDATA[$F{custamount}]]></variableExpression>
+    </variable>
+    <variable name="final" class="java.lang.String"/>
+    <detail>
+        <band height="25">
+            <textField isBlankWhenNull="true">
+                <reportElement x="-3" y="6" width="240" height="14" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="88b7f348-76d7-4552-b9da-3ebd51b775db">
+                    <printWhenExpression><![CDATA[$F{merctext}!=null]]></printWhenExpression>
+                </reportElement>
+                <box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+                <textElement textAlignment="Right" verticalAlignment="Top">
+                    <paragraph lineSpacing="Single" lineSpacingSize="0.0"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{merctext})]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="280" y="5" width="277" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="817d2570-dd31-4dd7-b9ba-348a0db2098d">
+                    <printWhenExpression><![CDATA[$F{mercamount}!=null]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Top">
+                    <paragraph lineSpacingSize="0.0"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{mercamount})]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="-3" y="10" width="240" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="7ab1934c-ed12-4ad5-ad9e-3e710d8c2e54">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <printWhenExpression><![CDATA[$F{custtext}!=null]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Right" markup="html">
+                    <paragraph lineSpacingSize="0.0"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{custtext})]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="280" y="9" width="277" height="16" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="f24a799d-4e59-4435-8939-ed6267e7f8b7">
+                    <printWhenExpression><![CDATA[$F{custamount}!=null]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <paragraph lineSpacingSize="0.0"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{custamount})]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <summary>
+        <band height="42">
+            <textField>
+                <reportElement x="247" y="7" width="100" height="30" uuid="337e373e-648a-4209-b138-a59515b55237"/>
+                <textFieldExpression><![CDATA[$V{total}+$V{custTotal}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="-3" y="10" width="240" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="6146f39c-cd51-4eeb-8800-1e5256decc28">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <printWhenExpression><![CDATA[$F{custtext}!=null]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Right" markup="html">
+                    <paragraph lineSpacingSize="0.0"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{custtext})]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="280" y="9" width="277" height="16" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="2bcdc211-465f-4f92-99c1-84959102154b">
+                    <printWhenExpression><![CDATA[$F{custamount}!=null]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <paragraph lineSpacingSize="0.0"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{custamount})]]></textFieldExpression>
+            </textField>
+        </band>
+    </summary>
+</jasperReport>
